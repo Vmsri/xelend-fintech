@@ -1,8 +1,8 @@
-
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const Products = () => {
   // Scroll to top on page load
@@ -105,10 +105,14 @@ const Products = () => {
               </Button>
             </div>
 
-            <div className="bg-gray-100 rounded-xl p-8 h-80 flex items-center justify-center animate-slide-up">
-              <div className="w-16 h-16 rounded-full bg-xelend-blue/20 flex items-center justify-center">
-                <span className="text-xelend-blue font-bold">LOS</span>
-              </div>
+            <div className="bg-gray-100 rounded-xl p-8 overflow-hidden animate-slide-up">
+              <AspectRatio ratio={4/3} className="bg-white rounded-lg overflow-hidden">
+                <img 
+                  src="/photo-1486312338219-ce68d2c6f44d"
+                  alt="Loan Origination System Interface" 
+                  className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                />
+              </AspectRatio>
             </div>
           </div>
         </div>
