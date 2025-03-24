@@ -52,10 +52,9 @@ const ProductCard = ({
   return (
     <div 
       ref={cardRef}
-      className={`group glass-card rounded-xl transition-all duration-300 opacity-0 translate-y-10
-        ${isExpanded ? 'scale-102 shadow-lg' : 'hover:scale-[1.02] hover:shadow-card'}`}
+      className="group glass-card rounded-xl opacity-0 translate-y-10"
     >
-      <div className="p-6 md:p-8">
+      <div className={`p-6 md:p-8 transition-all duration-300 ${isExpanded ? 'shadow-lg' : 'hover:shadow-card'}`}>
         {/* Status badge */}
         <div className={`inline-block px-3 py-1 mb-4 text-xs font-medium rounded-full
           ${status === 'available' 
