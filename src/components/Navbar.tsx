@@ -1,8 +1,17 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { cn } from '@/lib/utils';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,12 +58,74 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link 
-              to="/products" 
-              className={`nav-link ${location.pathname === '/products' ? 'text-xelend-blue font-medium' : 'text-gray-700 hover:text-xelend-blue'}`}
-            >
-              Products
-            </Link>
+            
+            {/* Products Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger 
+                    className={`nav-link bg-transparent ${
+                      location.pathname.includes('/products') ? 'text-xelend-blue font-medium' : 'text-gray-700 hover:text-xelend-blue'
+                    }`}
+                  >
+                    Products
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white rounded-md shadow-lg p-2 w-56">
+                    <ul className="grid gap-2">
+                      <li>
+                        <Link
+                          to="/products/collections"
+                          className={`block p-2 rounded-md ${
+                            location.pathname === '/products/collections' 
+                              ? 'bg-xelend-blue/10 text-xelend-blue' 
+                              : 'hover:bg-gray-100'
+                          }`}
+                        >
+                          Collections (Available Now)
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/products/sourcing"
+                          className={`block p-2 rounded-md ${
+                            location.pathname === '/products/sourcing' 
+                              ? 'bg-xelend-blue/10 text-xelend-blue' 
+                              : 'hover:bg-gray-100'
+                          }`}
+                        >
+                          Sourcing (Coming Soon)
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/products/crm"
+                          className={`block p-2 rounded-md ${
+                            location.pathname === '/products/crm' 
+                              ? 'bg-xelend-blue/10 text-xelend-blue' 
+                              : 'hover:bg-gray-100'
+                          }`}
+                        >
+                          CRM (Coming Soon)
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/products"
+                          className={`block p-2 rounded-md ${
+                            location.pathname === '/products' 
+                              ? 'bg-xelend-blue/10 text-xelend-blue' 
+                              : 'hover:bg-gray-100'
+                          }`}
+                        >
+                          View All Products
+                        </Link>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            
             <Link 
               to="/about" 
               className={`nav-link ${location.pathname === '/about' ? 'text-xelend-blue font-medium' : 'text-gray-700 hover:text-xelend-blue'}`}
@@ -100,12 +171,37 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link 
-              to="/products" 
-              className={`block py-2 ${location.pathname === '/products' ? 'text-xelend-blue font-medium' : 'text-gray-700'}`}
-            >
-              Products
-            </Link>
+            
+            {/* Mobile Products Dropdown */}
+            <div className="space-y-2">
+              <Link 
+                to="/products" 
+                className={`block py-2 ${location.pathname === '/products' ? 'text-xelend-blue font-medium' : 'text-gray-700'}`}
+              >
+                Products
+              </Link>
+              <div className="pl-4 border-l-2 border-gray-200 space-y-2">
+                <Link 
+                  to="/products/collections" 
+                  className={`block py-1 text-sm ${location.pathname === '/products/collections' ? 'text-xelend-blue font-medium' : 'text-gray-600'}`}
+                >
+                  Collections (Available Now)
+                </Link>
+                <Link 
+                  to="/products/sourcing" 
+                  className={`block py-1 text-sm ${location.pathname === '/products/sourcing' ? 'text-xelend-blue font-medium' : 'text-gray-600'}`}
+                >
+                  Sourcing (Coming Soon)
+                </Link>
+                <Link 
+                  to="/products/crm" 
+                  className={`block py-1 text-sm ${location.pathname === '/products/crm' ? 'text-xelend-blue font-medium' : 'text-gray-600'}`}
+                >
+                  CRM (Coming Soon)
+                </Link>
+              </div>
+            </div>
+            
             <Link 
               to="/about" 
               className={`block py-2 ${location.pathname === '/about' ? 'text-xelend-blue font-medium' : 'text-gray-700'}`}
