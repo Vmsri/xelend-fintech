@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
@@ -18,7 +17,6 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Track scrolling for navbar styling
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -27,7 +25,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
@@ -42,7 +39,6 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <Link to="/" className="flex items-center">
             <span className="text-2xl font-bold text-xelend-navy">
               Xelend
@@ -50,7 +46,6 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
@@ -59,17 +54,18 @@ const Navbar = () => {
               Home
             </Link>
             
-            {/* Products Dropdown */}
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger 
-                    className={`nav-link bg-transparent ${
-                      location.pathname.includes('/products') ? 'text-xelend-blue font-medium' : 'text-gray-700 hover:text-xelend-blue'
-                    }`}
-                  >
-                    Products
-                  </NavigationMenuTrigger>
+                  <Link to="/products">
+                    <NavigationMenuTrigger 
+                      className={`nav-link bg-transparent ${
+                        location.pathname.includes('/products') ? 'text-xelend-blue font-medium' : 'text-gray-700 hover:text-xelend-blue'
+                      }`}
+                    >
+                      Products
+                    </NavigationMenuTrigger>
+                  </Link>
                   <NavigationMenuContent className="bg-white rounded-md shadow-lg p-2 w-56">
                     <ul className="grid gap-2">
                       <li>
@@ -108,18 +104,6 @@ const Navbar = () => {
                           CRM (Coming Soon)
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          to="/products"
-                          className={`block p-2 rounded-md ${
-                            location.pathname === '/products' 
-                              ? 'bg-xelend-blue/10 text-xelend-blue' 
-                              : 'hover:bg-gray-100'
-                          }`}
-                        >
-                          View All Products
-                        </Link>
-                      </li>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -140,14 +124,12 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="default" className="btn-hover">
               Request Demo
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-xelend-navy"
@@ -161,7 +143,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-100 animate-fade-in">
           <div className="px-4 pt-2 pb-4 space-y-4">
@@ -172,7 +153,6 @@ const Navbar = () => {
               Home
             </Link>
             
-            {/* Mobile Products Dropdown */}
             <div className="space-y-2">
               <Link 
                 to="/products" 
