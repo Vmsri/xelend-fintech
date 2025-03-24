@@ -52,8 +52,8 @@ const ProductCard = ({
   return (
     <div 
       ref={cardRef}
-      className={`group glass-card rounded-xl transition-all duration-700 opacity-0 translate-y-10
-        ${isExpanded ? 'scale-105 shadow-lg z-10' : 'hover:scale-[1.02] hover:shadow-card'}`}
+      className={`group glass-card rounded-xl transition-all duration-300 opacity-0 translate-y-10
+        ${isExpanded ? 'scale-102 shadow-lg' : 'hover:scale-[1.02] hover:shadow-card'}`}
     >
       <div className="p-6 md:p-8">
         {/* Status badge */}
@@ -70,7 +70,7 @@ const ProductCard = ({
         <p className="text-gray-600 mb-6">{description}</p>
         
         {/* Features */}
-        <div className={`transition-all duration-500 overflow-hidden
+        <div className={`transition-all duration-300 overflow-hidden 
           ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}
         >
           <div className="space-y-4 mb-6">
