@@ -13,7 +13,7 @@ import { Button, ButtonProps } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
 interface FormDialogProps {
-  triggerText: string;
+  triggerText: React.ReactNode;
   title: string;
   description: string;
   children: React.ReactNode;
