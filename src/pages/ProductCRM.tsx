@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import GetNotifiedForm from '@/components/forms/GetNotifiedForm';
 
 const ProductCRM = () => {
   // Scroll to top on page load
@@ -94,10 +95,7 @@ const ProductCRM = () => {
                 <p className="text-gray-600">Higher conversion rates, reduced customer acquisition costs, and better lead tracking.</p>
               </div>
 
-              <Button className="btn-hover group">
-                Get Notified When Available
-                <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <GetNotifiedForm product="CRM" />
             </div>
 
             <div className="bg-gray-100 rounded-xl p-8 overflow-hidden animate-slide-up">
@@ -120,10 +118,13 @@ const ProductCRM = () => {
               Be the first to know when our CRM solution launches. Sign up for notifications.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="btn-hover group w-full sm:w-auto bg-white text-xelend-navy hover:bg-gray-100">
-                Get Notified
-                <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <GetNotifiedForm 
+                product="CRM"
+                triggerText="Get Notified"
+                buttonVariant="default"
+                buttonSize="lg"
+                buttonClassName="w-full sm:w-auto bg-white text-xelend-navy hover:bg-gray-100"
+              />
               <Link to="/contact">
                 <Button variant="outline" size="lg" className="btn-hover w-full sm:w-auto border-white text-white hover:bg-white/10">
                   Contact Sales

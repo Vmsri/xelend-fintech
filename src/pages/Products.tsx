@@ -1,8 +1,11 @@
+
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import GetNotifiedForm from '@/components/forms/GetNotifiedForm';
+import RequestDemoForm from '@/components/forms/RequestDemoForm';
 
 const Products = () => {
   // Scroll to top on page load
@@ -99,10 +102,7 @@ const Products = () => {
                 <p className="text-gray-600">Faster loan approvals, reduced risk, and improved compliance.</p>
               </div>
 
-              <Button className="btn-hover group">
-                Get Notified When Available
-                <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <GetNotifiedForm product="LOS" />
             </div>
 
             <div className="bg-gray-100 rounded-xl p-8 overflow-hidden animate-slide-up">
@@ -195,10 +195,7 @@ const Products = () => {
                 <p className="text-gray-600">Increased recovery rates, reduced operational costs, and better customer engagement.</p>
               </div>
 
-              <Button className="btn-hover group">
-                Request a Demo
-                <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <RequestDemoForm />
             </div>
           </div>
         </div>
@@ -275,10 +272,7 @@ const Products = () => {
                 <p className="text-gray-600">Higher conversion rates, reduced customer acquisition costs, and better lead tracking.</p>
               </div>
 
-              <Button className="btn-hover group">
-                Get Notified When Available
-                <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <GetNotifiedForm product="CRM" />
             </div>
 
             <div className="bg-gray-100 rounded-xl p-8 h-80 flex items-center justify-center animate-slide-up">
@@ -299,10 +293,11 @@ const Products = () => {
               Discover how Xelend's solutions can transform your institution's productivity and customer experience.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="btn-hover group w-full sm:w-auto bg-white text-xelend-navy hover:bg-gray-100">
-                Request a Demo
-                <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <RequestDemoForm 
+                buttonVariant="default"
+                buttonSize="lg"
+                buttonClassName="w-full sm:w-auto bg-white text-xelend-navy hover:bg-gray-100"
+              />
               <Link to="/contact">
                 <Button variant="outline" size="lg" className="btn-hover w-full sm:w-auto border-white text-white hover:bg-white/10">
                   Contact Sales

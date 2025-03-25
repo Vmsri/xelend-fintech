@@ -6,6 +6,7 @@ import ProductCard from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import RequestDemoForm from '@/components/forms/RequestDemoForm';
 
 const Index = () => {
   // Scroll to top on page load
@@ -151,10 +152,11 @@ const Index = () => {
               Join leading financial institutions that are already leveraging Xelend to streamline their operations and drive growth.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="btn-hover group w-full sm:w-auto bg-white text-xelend-navy hover:bg-gray-100">
-                Request a Demo
-                <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <RequestDemoForm
+                buttonVariant="default"
+                buttonSize="lg"
+                buttonClassName="w-full sm:w-auto bg-white text-xelend-navy hover:bg-gray-100"
+              />
               <Link to="/contact">
                 <Button variant="outline" size="lg" className="btn-hover w-full sm:w-auto border-white text-white hover:bg-white/10">
                   Contact Us
