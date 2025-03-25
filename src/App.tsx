@@ -12,7 +12,7 @@ import ProductCRM from "./pages/ProductCRM";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
