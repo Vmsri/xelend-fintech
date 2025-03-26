@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/Footer";
+import FormSubmissionsDialog from "./components/forms/FormSubmissions";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
             </Routes>
           </main>
           <Footer />
+          <FormSubmissionsDialog />
         </div>
       </BrowserRouter>
     </TooltipProvider>

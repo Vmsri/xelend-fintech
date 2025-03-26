@@ -39,13 +39,14 @@ const RequestDemoForm = ({
       buttonClassName={buttonClassName}
       successTitle="Request submitted"
       successDescription="Thank you for requesting a demo! Our team will reach out shortly to schedule a session."
+      formType="demo"
     >
-      <FormField id="demo-name" label="Name" placeholder="Your full name" required />
-      <FormField id="demo-email" label="Email" type="email" placeholder="Your business email" required />
-      <FormField id="demo-phone" label="Phone" type="tel" placeholder="Your phone number" required />
-      <FormField id="demo-company" label="Company" placeholder="Your company name" required />
+      <FormField id="demo-name" name="name" label="Name" placeholder="Your full name" required />
+      <FormField id="demo-email" name="email" label="Email" type="email" placeholder="Your business email" required />
+      <FormField id="demo-phone" name="phone" label="Phone" type="tel" placeholder="Your phone number" required />
+      <FormField id="demo-company" name="company" label="Company" placeholder="Your company name" required />
       
-      <FormField id="demo-industry" label="Industry" required>
+      <FormField id="demo-industry" name="industry" label="Industry" required>
         <Select>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select industry" />
@@ -59,7 +60,7 @@ const RequestDemoForm = ({
         </Select>
       </FormField>
       
-      <FormField id="demo-message" label="Message">
+      <FormField id="demo-message" name="message" label="Message">
         <textarea
           id="demo-message"
           className="col-span-3 flex h-24 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"

@@ -51,13 +51,14 @@ const ConsultationForm = ({
       submitText="Book Consultation"
       successTitle="Consultation booked"
       successDescription="Your consultation is booked! Our team will reach out with the meeting details."
+      formType="consultation"
     >
-      <FormField id="consult-name" label="Name" placeholder="Your full name" required />
-      <FormField id="consult-email" label="Email" type="email" placeholder="Your email address" required />
-      <FormField id="consult-company" label="Company" placeholder="Your company name" required />
-      <FormField id="consult-phone" label="Phone" type="tel" placeholder="Your phone number" required />
+      <FormField id="consult-name" name="name" label="Name" placeholder="Your full name" required />
+      <FormField id="consult-email" name="email" label="Email" type="email" placeholder="Your email address" required />
+      <FormField id="consult-company" name="company" label="Company" placeholder="Your company name" required />
+      <FormField id="consult-phone" name="phone" label="Phone" type="tel" placeholder="Your phone number" required />
       
-      <FormField id="consult-purpose" label="Purpose" required>
+      <FormField id="consult-purpose" name="purpose" label="Purpose" required>
         <Select>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select purpose" />
@@ -80,6 +81,7 @@ const ConsultationForm = ({
             <PopoverTrigger asChild>
               <Button
                 id="consult-date"
+                name="date"
                 variant="outline"
                 className={cn(
                   "w-full justify-start text-left font-normal",
@@ -107,7 +109,7 @@ const ConsultationForm = ({
         </div>
       </div>
       
-      <FormField id="consult-time" label="Preferred Time">
+      <FormField id="consult-time" name="time" label="Preferred Time">
         <select
           id="consult-time"
           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
@@ -126,13 +128,14 @@ const ConsultationForm = ({
         </select>
       </FormField>
       
-      <FormField id="consult-message" label="Message">
+      <FormField id="consult-message" name="message" label="Message">
         <textarea
           id="consult-message"
           className="flex h-24 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           placeholder="Tell us about your requirements"
         />
       </FormField>
+      <input type="hidden" name="selectedDate" value={date ? format(date, "PPP") : ""} />
     </FormDialog>
   );
 };

@@ -43,10 +43,11 @@ const ScheduleDemoForm = ({
       buttonClassName={buttonClassName}
       successTitle="Demo scheduled"
       successDescription="Your demo is scheduled! You'll receive a confirmation email with the meeting details."
+      formType="schedule"
     >
-      <FormField id="schedule-name" label="Name" placeholder="Your full name" required />
-      <FormField id="schedule-email" label="Email" type="email" placeholder="Your email address" required />
-      <FormField id="schedule-company" label="Company" placeholder="Your company name" required />
+      <FormField id="schedule-name" name="name" label="Name" placeholder="Your full name" required />
+      <FormField id="schedule-email" name="email" label="Email" type="email" placeholder="Your email address" required />
+      <FormField id="schedule-company" name="company" label="Company" placeholder="Your company name" required />
       
       <div className="grid grid-cols-4 items-center gap-4">
         <label htmlFor="schedule-date" className="text-right text-sm font-medium">
@@ -57,6 +58,7 @@ const ScheduleDemoForm = ({
             <PopoverTrigger asChild>
               <Button
                 id="schedule-date"
+                name="date"
                 variant="outline"
                 className={cn(
                   "w-full justify-start text-left font-normal",
@@ -84,7 +86,7 @@ const ScheduleDemoForm = ({
         </div>
       </div>
       
-      <FormField id="schedule-time" label="Preferred Time">
+      <FormField id="schedule-time" name="time" label="Preferred Time">
         <select
           id="schedule-time"
           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
@@ -103,13 +105,14 @@ const ScheduleDemoForm = ({
         </select>
       </FormField>
       
-      <FormField id="schedule-message" label="Message">
+      <FormField id="schedule-message" name="message" label="Message">
         <textarea
           id="schedule-message"
           className="flex h-24 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           placeholder="Any specific areas you'd like to explore during the demo?"
         />
       </FormField>
+      <input type="hidden" name="selectedDate" value={date ? format(date, "PPP") : ""} />
     </FormDialog>
   );
 };

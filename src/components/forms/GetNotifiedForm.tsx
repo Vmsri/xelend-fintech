@@ -35,10 +35,12 @@ const GetNotifiedForm = ({
       submitText="Notify Me"
       successTitle="You're on our list!"
       successDescription="We'll notify you as soon as we launch."
+      formType="notify"
     >
-      <FormField id="notify-name" label="Name" placeholder="Your full name" required />
-      <FormField id="notify-email" label="Email" type="email" placeholder="Your email address" required />
-      <FormField id="notify-company" label="Company" placeholder="Your company name" />
+      <FormField id="notify-name" name="name" label="Name" placeholder="Your full name" required />
+      <FormField id="notify-email" name="email" label="Email" type="email" placeholder="Your email address" required />
+      <FormField id="notify-company" name="company" label="Company" placeholder="Your company name" />
+      <input type="hidden" name="product" value={product} />
     </FormDialog>
   );
 };
