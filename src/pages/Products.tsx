@@ -6,6 +6,14 @@ import { Link } from 'react-router-dom';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import GetNotifiedForm from '@/components/forms/GetNotifiedForm';
 import RequestDemoForm from '@/components/forms/RequestDemoForm';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Products = () => {
   // Scroll to top on page load
@@ -106,13 +114,42 @@ const Products = () => {
             </div>
 
             <div className="bg-gray-100 rounded-xl p-8 overflow-hidden animate-slide-up">
-              <AspectRatio ratio={4/3} className="bg-white rounded-lg overflow-hidden">
-                <img 
-                  src="/photo-1486312338219-ce68d2c6f44d"
-                  alt="Loan Origination System Interface" 
-                  className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
-                />
-              </AspectRatio>
+              <Carousel className="w-full">
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-video items-center justify-center p-0">
+                          <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
+                            <img 
+                              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+                              alt="Person working on loan application" 
+                              className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                            />
+                          </AspectRatio>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-video items-center justify-center p-0">
+                          <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
+                            <img 
+                              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+                              alt="Loan origination dashboard" 
+                              className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                            />
+                          </AspectRatio>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex -left-6" />
+                <CarouselNext className="hidden md:flex -right-6" />
+              </Carousel>
             </div>
           </div>
         </div>
@@ -122,10 +159,43 @@ const Products = () => {
       <section className="section-padding bg-gray-50" id="collections">
         <div className="page-container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 bg-gray-100 rounded-xl p-8 h-80 flex items-center justify-center animate-slide-up">
-              <div className="w-16 h-16 rounded-full bg-xelend-blue/20 flex items-center justify-center">
-                <span className="text-xelend-blue font-bold">DRC</span>
-              </div>
+            <div className="order-2 md:order-1 bg-gray-100 rounded-xl p-8 overflow-hidden animate-slide-up">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-video items-center justify-center p-0">
+                          <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
+                            <img 
+                              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+                              alt="Debt recovery dashboard" 
+                              className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                            />
+                          </AspectRatio>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-video items-center justify-center p-0">
+                          <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
+                            <img 
+                              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1"
+                              alt="Collection agent interface" 
+                              className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                            />
+                          </AspectRatio>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex -left-6" />
+                <CarouselNext className="hidden md:flex -right-6" />
+              </Carousel>
             </div>
 
             <div className="order-1 md:order-2 animate-slide-right">
@@ -275,10 +345,43 @@ const Products = () => {
               <GetNotifiedForm product="CRM" />
             </div>
 
-            <div className="bg-gray-100 rounded-xl p-8 h-80 flex items-center justify-center animate-slide-up">
-              <div className="w-16 h-16 rounded-full bg-xelend-blue/20 flex items-center justify-center">
-                <span className="text-xelend-blue font-bold">CRM</span>
-              </div>
+            <div className="bg-gray-100 rounded-xl p-8 overflow-hidden animate-slide-up">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-video items-center justify-center p-0">
+                          <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
+                            <img 
+                              src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+                              alt="CRM dashboard" 
+                              className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                            />
+                          </AspectRatio>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-video items-center justify-center p-0">
+                          <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
+                            <img 
+                              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+                              alt="Lead management interface" 
+                              className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                            />
+                          </AspectRatio>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex -left-6" />
+                <CarouselNext className="hidden md:flex -right-6" />
+              </Carousel>
             </div>
           </div>
         </div>
