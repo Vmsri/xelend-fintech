@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { saveFormSubmission } from '@/utils/formDataStorage';
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -33,7 +34,19 @@ const Contact = () => {
     e.preventDefault();
     setFormState(prev => ({ ...prev, submitting: true }));
     
-    // Simulate form submission
+    // Collect form data
+    const formData = {
+      name: formState.name,
+      email: formState.email,
+      phone: formState.phone,
+      company: formState.company,
+      message: formState.message
+    };
+    
+    // Save form submission
+    saveFormSubmission('contact', formData);
+    
+    // Show success toast
     setTimeout(() => {
       toast({
         title: "Inquiry Submitted",
