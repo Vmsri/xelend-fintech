@@ -122,8 +122,8 @@ const Products = () => {
                         <CardContent className="flex aspect-video items-center justify-center p-0">
                           <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
                             <img 
-                              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-                              alt="Person working on loan application" 
+                              src="/lovable-uploads/ae6f9de6-9eb9-4e33-8f0f-7894641ab3f1.png"
+                              alt="Loan applications dashboard showing list of applicants" 
                               className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
                             />
                           </AspectRatio>
@@ -137,8 +137,38 @@ const Products = () => {
                         <CardContent className="flex aspect-video items-center justify-center p-0">
                           <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
                             <img 
-                              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
-                              alt="Loan origination dashboard" 
+                              src="/lovable-uploads/355f1fbb-6bf6-42f7-859f-256c4031c27a.png"
+                              alt="Loan sourcing interface with applicant details" 
+                              className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                            />
+                          </AspectRatio>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-video items-center justify-center p-0">
+                          <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
+                            <img 
+                              src="/lovable-uploads/eaa11889-749e-4426-9979-d0b7afae75e9.png"
+                              alt="LOS dashboard showing loan metrics and analytics" 
+                              className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                            />
+                          </AspectRatio>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-video items-center justify-center p-0">
+                          <AspectRatio ratio={16/9} className="bg-white rounded-lg overflow-hidden">
+                            <img 
+                              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+                              alt="Person working on loan application" 
                               className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
                             />
                           </AspectRatio>
